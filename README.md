@@ -73,5 +73,12 @@ can be a challenge considering how many peices of hardware I had to buy and test
  | **4**    | *LAB*       | Virtualization Servers, Router, L2 Switch |
  | **5**    | *SAN*       | Family File Servers, Media Servers, Archive Storage | 
 
-# **DEPLOYMENT**
+## **DEPLOYMENT**
+Deployment of this new network wasn't without its challenges but, it was mostly due to the fact that I was transitioning, what was a generic star soho network into a secure, and highly specialized enviornment.
 
+### **First Phase: Infrastructure Improvements**
+1. Wiring for this project was one of the more difficult aspects since my wireless router can only be in one spot and the new home I had just moved into wasn't outfitted with ethernet.
+2. I purchased bulk STP CAT6 cable since interference was a concern since a new home surveillance solution I'm working on would require wiring over my kitchen and garage.
+3. Once which rooms needed ethernet were decided on it was time to begin drilling and cutting through walls
+4. After installing the new networking hardware and implementing the planned segmentation
+5. -
