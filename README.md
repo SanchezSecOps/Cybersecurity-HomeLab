@@ -90,7 +90,6 @@ Deployment of this new network wasn't without its challenges but, it was mostly 
 ### **Second Phase: Security Testing**
 1. Once WAN connectivity was established my next step was to implement and test ACLs to ensure isolation *see (Attatchment) for more details*
 2. Testing the network's isolation from other segments began with pinging devices to ensure those devices/networks were unreachable even with ICMP.
-3. Next I conducted a double tagging VLAN attack on my switches to ensure there were no misconfigurations with trunking and tagging.
 4. Finally I attempted to crack and brute force network segments utilizing the WPA2 protocol to verify the PSK complexity was sufficient.
 
 ### **Third Phase: Lab Deployment**
