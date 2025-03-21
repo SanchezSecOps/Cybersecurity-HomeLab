@@ -1,0 +1,43 @@
+
+ACL EXAMPLES
+
+#VLAN 4 IS FORBBIDEN FROM MAKING CONTACT WITH VLAN 1(INTERNAL NETWORK) & VLAN 5(HONEYNET)
+
+ACL NUMBER 4000
+rule 10 permit ip source 192.168.4.0 0.0.0.255 destination 192.168.1.1 0.0.0.0
+ 	#RULE PERMITS VLAN 4 GATEWAY ACCESS
+----------------------------------------------------------------------------------------- 
+rule 20 deny ip source 192.168.4.0 0.0.0.255 destination 192.168.1.0 0.0.0.255
+	#RULE DENIES VLAN 4 CONTACT WITH VLAN 1 DEVICES
+-----------------------------------------------------------------------------------------
+rule 30 deny ip source 192.168.4.0 0.0.0.255 destination 192.168.5.0 0.0.0.255
+	#RULE DENIES VLAN 4 CONTACT WITH VLAN 5 DEVICES
+-----------------------------------------------------------------------------------------
+rule 40 permit ip source 192.168.4.0 0.0.0.255 destination any
+	#RULE ALLOWS INTERNET ACCESS
+-----------------------------------------------------------------------------------------
+#APPLYING RULE TO VLAN 4
+<ROOT@SWITCH>interface vlan 4
+<ROOT@SWITCH>ip access-group 4000 in
+
+-----------------------------------------------------------------------------------------
+
+#VLAN 5 IS FORBBIDEN FROM MAKING CONTACT WITH VLAN 1(INTERNAL NETWORK) & VLAN 4(SOC LAB)
+
+ACL NUMBER 5000
+rule 10 permit ip source 192.168.5.0 0.0.0.255 destination 192.168.1.1 0.0.0.0
+	#RULE PERMITS VLAN 4 GATEWAY ACCESS
+-----------------------------------------------------------------------------------------
+rule 20 deny ip source 192.168.5.0 0.0.0.255 destination 192.168.1.0 0.0.0.255
+	#RULE DENIES VLAN 5 CONTACT WITH VLAN 1 DEVICES
+-----------------------------------------------------------------------------------------
+rule 30 deny ip source 192.168.5.0 0.0.0.255 destination 192.168.4.0 0.0.0.255
+	#RULE DENIES VLAN 5 CONTACT WITH VLAN 4 DEVICES
+-----------------------------------------------------------------------------------------
+rule 40 permit ip source 192.168.5.0 0.0.0.255 destination any
+	#RULE ALLOWS INTERNET ACCESS
+-----------------------------------------------------------------------------------------
+# APPLYING RULE TO VLAN 5
+<ROOT@SWITCH>interface vlan 5
+<ROOT@SWITCH>ip access-group 5000 in
+
