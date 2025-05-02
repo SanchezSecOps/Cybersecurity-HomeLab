@@ -7,7 +7,7 @@ This is for anyone looking to get into the world of InfoSec/Cybersecurity
 This project outlines the entirety of building and deploying a lab environment within my home network while keeping it isolated and without being overly dependent on 3rd party virtualization. I am prioritizing the use of physical hardware to better understand the behavior, maintenance, and problems with on-premise equipment in a simulated enterprise network. Furthermore, the prioritization of physical hardware helps me become more aware of hardware considerations and limitations when deploying new services, applications, hardware compenents, etc... Virtualization will be a big part of this lab but it will be locally hosted on specially procured hardware making me responsible for updating and securing the machines and services on them.
 
 ## **NETWORK ARCHITECTURE & INFRASTRUCTURE**
-*Detailed change request documents and network diagrams can be found in* (ATTACHMENT)
+*Detailed change request documents and network diagrams can be found in* [Change Request](SOC Change Request.pdf)
 
 **Before launching my home lab I had to consider how this lab's traffic would flow and can my existing infrastructure support it**
 - Considering the nature of the lab I'd like to have it be in as little contact with my existing home network. To achieve that isolation I'll need more advanced features from my networking devices in the internal (Home) network. These devices must support VLANS, 802.1q tagging, Port Forwarding, Firewall ACL Rules, stronger security protocols like WPA3, and Multiple broadcast domains.
