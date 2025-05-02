@@ -62,7 +62,7 @@ I cannot spontaneously push untested upgrades into our internal network since th
 
 ### Architecture planning
 Following my new network design this is a brief overview of the planned architecture
-*once again more detailed and technical documents can be found in (attatchment)*
+*once again more detailed and technical documents can be found in* [Network Diagram](Network_Diagram.png)
 
 ### Network Segments
 802.1q VLANs may be commonplace in enterprise environments but, having them work properly with other security features on non-enterprise hardware 
@@ -88,7 +88,7 @@ Deployment of this new network wasn't without its challenges but, it was mostly 
 5. From there I went around my home connecting all devices to their designated segment and ensuring they were within their proper IP range.
 
 ### **Second Phase: Security Testing**
-1. Once WAN connectivity was established my next step was to implement and test ACLs to ensure isolation *see (Attatchment) for more details*
+1. Once WAN connectivity was established my next step was to implement and test ACLs to ensure isolation *see [VLAN ACLs](VLAN_ACL_%20EXAMPLES.txt) for more details*
 2. Testing the network's isolation from other segments began with pinging devices to ensure those devices/networks were unreachable even with ICMP.
 4. Finally I attempted to crack and brute force network segments utilizing the WPA2 protocol to verify the PSK complexity was sufficient.
 
@@ -98,7 +98,7 @@ Deployment of this new network wasn't without its challenges but, it was mostly 
 2. I wiped the internal storage devices on both PCs using AOMEI Partition assistant as a security measure since they were acquired on the 2nd hand market.
 3. Internal 802.11 devices were removed to limit my attack surface from external threats since configurations on this network segment at times will be purposefully vulnerable for experimentation
 4. Using a spare NVMe SSD & M.2 enclosure I flashed a Proxmox VE ISO onto it to create the installation media for my type 1 hypervisor servers.
-5. Proper installation of Proxmox VE requires simple hardware configuration in the UEFI settings *see (attachment) for more*
+5. Proper installation of Proxmox VE requires simple hardware configuration in the UEFI settings 
 6. Next I needed to deploy the lab's dedicated networking infrastructure: 1xRouter, 1xSwitch, 7xCAT6 Patch cables.
 7. Wiring goes as follows: INTERNAL NETWORK> LAB WAP/ROUTER> LAB SWITCH> VIRTUALIZATION SERVERS & WIRED/WIRELESS CLIENTS
 8. Now that the lab is running with properly configured infrastructure and security measures Tools, Services, Apps, and workstations can be deployed from PVE servers
